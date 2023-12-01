@@ -25,7 +25,7 @@ object DigitParser {
     def parseStringOfDigits(str: String): String =
         val regex = Regex("(?=(" + digitMap.keySet.mkString("|") + "|[1-9]))");
         val matches = regex.findAllMatchIn(str).map(_.group(1)).toVector;
-        parseDigit(matches.head) + parseDigit(matches.last)
+        matches.map(parseDigit).mkString
 }
 
 @main def part1(): Unit =
