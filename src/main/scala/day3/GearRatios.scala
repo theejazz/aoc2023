@@ -12,7 +12,7 @@ case class Token(num: String, x: Int, y: Int) {
             y <- y - 1 to y + 1
         } yield (x, y)
 
-        coords.filterNot({ for x <- x until x + num.size yield (x, y) }.contains)
+        coords.diff({ for x <- x until x + num.size yield (x, y) })
 
     def isPartNumber(schematic: Seq[String]): Boolean =
         if (num.toIntOption.isEmpty) {
