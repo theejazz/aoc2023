@@ -23,7 +23,7 @@ public class Part15 {
         }
 
         Map<String, Node> map = nodes.stream().map(Node::fromString).collect(Collectors.toMap(node -> node.name, Function.identity()));
-        System.out.println(Node.walk(map, directions));
+        System.out.println(Node.walk(map, "AAA", "ZZZ", directions));
     }
 
 }

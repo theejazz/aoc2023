@@ -26,7 +26,7 @@ public class Part16 {
         }
 
         Map<String, Node> map = nodes.stream().map(Node::fromString).collect(Collectors.toMap(node -> node.name, Function.identity()));
-        System.out.println(Node.ghostWalk(map, directions));
+        System.out.println(Node.ghostWalk(map, "..A", "..Z", directions));
     }
 
 }
